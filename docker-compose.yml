@@ -1,0 +1,23 @@
+version: '3'
+services:
+  fe:
+    image: ncl-frontend:lastest
+    build:
+      context: .
+      dockerfile: Dockerfile
+#    deploy:
+#      replicas: 1
+#    networks:
+#      - my-overlay-network
+    ports:
+      - target: 3000
+        published: 3001
+#        protocol: tcp
+#        mode: host
+
+#networks:
+#  my-overlay-network:
+#    driver: overlay
+#    ipam:
+#      config:
+#        - subnet: 10.0.9.0/24
